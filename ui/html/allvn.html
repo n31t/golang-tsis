@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Visual Novels</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>All Visual Novels</h1>
+    <ul>
+        {{range .VisualNovels}}
+        <li>
+            <h2>{{.Title}}</h2>
+            <p><strong>Developer:</strong> {{.Developer}}</p>
+            <p><strong>Release Date:</strong> {{.ReleaseDate}}</p>
+            <p><strong>Platform:</strong> {{.Platform}}</p>
+            <img src="{{.Image}}" alt="{{.Title}} Cover Image">
+        </li>
+        {{end}}
+    </ul>
+</body>
+</html>
