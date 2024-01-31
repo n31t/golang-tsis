@@ -13,9 +13,12 @@ type VisualNovel struct {
 }
 
 var visualNovels = []VisualNovel{
-	VisualNovel{Title: "Fate/Stay Night", Developer: "Type-Moon", ReleaseDate: "January 30, 2004", Platform: "Windows"},
+	VisualNovel{Title: "Fate/Stay Night", Developer: "Type-Moon", ReleaseDate: "January 30, 2004", Platform: "Windows", Image: "https://t.vndb.org/cv/85/24185.jpg"},
+	VisualNovel{Title: "Tsukihime", Developer: "Type-Moon", ReleaseDate: "December 18, 2000", Platform: "Windows", Image: "https://t.vndb.org/cv/52/2252.jpg"},
+	VisualNovel{Title: "Tsukihime: A Piece of Blue Glass Moon", Developer: "Type-Moon", ReleaseDate: "August 26, 2021", Platform: "Nintendo Switch", Image: "https://t.vndb.org/cv/41/48041.jpg"},
+
+	VisualNovel{Title: "Fate/Zero", Developer: "Nitroplus", ReleaseDate: "December 29, 2006", Platform: "Windows", Image: "https://t.vndb.org/cv/87/21587.jpg"},
 	VisualNovel{Title: "Fate/Hollow Ataraxia", Developer: "Type-Moon", ReleaseDate: "October 28, 2005", Platform: "Windows"},
-	VisualNovel{Title: "Fate/Zero", Developer: "Nitroplus", ReleaseDate: "December 29, 2006", Platform: "Windows"},
 	VisualNovel{Title: "Fate/Extra", Developer: "Type-Moon", ReleaseDate: "July 22, 2010", Platform: "PlayStation Portable"},
 	VisualNovel{Title: "Fate/Extra CCC", Developer: "Type-Moon", ReleaseDate: "March 28, 2013", Platform: "PlayStation Portable"},
 	VisualNovel{Title: "Fate/Extra CCC Fox Tail", Developer: "Type-Moon", ReleaseDate: "March 26, 2013", Platform: "Manga"},
@@ -29,28 +32,19 @@ var visualNovels = []VisualNovel{
 	VisualNovel{Title: "Fate/tiger colosseum", Developer: "Capcom", ReleaseDate: "September 13, 2007", Platform: "PlayStation Portable"},
 	VisualNovel{Title: "Fate/tiger colosseum Upper", Developer: "Capcom", ReleaseDate: "August 28, 2008", Platform: "PlayStation Portable"},
 
-	VisualNovel{Title: "Tsukihime", Developer: "Type-Moon", ReleaseDate: "December 18, 2000", Platform: "Windows"},
 	VisualNovel{Title: "Kagetsu Tohya", Developer: "Type-Moon", ReleaseDate: "August 10, 2001", Platform: "Windows"},
-	VisualNovel{Title: "Melty Blood", Developer: "Type-Moon", ReleaseDate: "December 2002", Platform: "Windows"},
-	VisualNovel{Title: "Melty Blood Re-ACT", Developer: "Type-Moon", ReleaseDate: "March 2004", Platform: "Windows"},
-	VisualNovel{Title: "Melty Blood Act Cadenza", Developer: "Type-Moon", ReleaseDate: "August 2005", Platform: "Windows"},
-	VisualNovel{Title: "Melty Blood Act Cadenza Ver.B", Developer: "Type-Moon", ReleaseDate: "March 2006", Platform: "Windows"},
-	VisualNovel{Title: "Melty Blood Actress Again", Developer: "Type-Moon", ReleaseDate: "August 2008", Platform: "Windows"},
-	VisualNovel{Title: "Melty Blood Actress Again Current Code", Developer: "Type-Moon", ReleaseDate: "July 2009", Platform: "Windows"},
-	VisualNovel{Title: "Melty Blood Actress Again Current Code Ver. 1.07", Developer: "Type-Moon", ReleaseDate: "December 2010", Platform: "Windows"},
+	// VisualNovel{Title: "Melty Blood", Developer: "Type-Moon", ReleaseDate: "December 2002", Platform: "Windows"},
+	// VisualNovel{Title: "Melty Blood Re-ACT", Developer: "Type-Moon", ReleaseDate: "March 2004", Platform: "Windows"},
+	// VisualNovel{Title: "Melty Blood Act Cadenza", Developer: "Type-Moon", ReleaseDate: "August 2005", Platform: "Windows"},
+	// VisualNovel{Title: "Melty Blood Act Cadenza Ver.B", Developer: "Type-Moon", ReleaseDate: "March 2006", Platform: "Windows"},
+	// VisualNovel{Title: "Melty Blood Actress Again", Developer: "Type-Moon", ReleaseDate: "August 2008", Platform: "Windows"},
+	// VisualNovel{Title: "Melty Blood Actress Again Current Code", Developer: "Type-Moon", ReleaseDate: "July 2009", Platform: "Windows"},
+	// VisualNovel{Title: "Melty Blood Actress Again Current Code Ver. 1.07", Developer: "Type-Moon", ReleaseDate: "December 2010", Platform: "Windows"},
 
 	VisualNovel{Title: "Kara no Kyokai", Developer: "Type-Moon", ReleaseDate: "December 1998", Platform: "Windows"},
 	VisualNovel{Title: "Kara no Kyokai: The Garden of Sinners", Developer: "Type-Moon", ReleaseDate: "December 2001", Platform: "Windows"},
 
-	VisualNovel{Title: "Mahotsukai no Yoru", Developer: "Type-Moon", ReleaseDate: "April 12, 2012", Platform: "Windows"},
 	VisualNovel{Title: "Mahotsukai no Yoru: Witch on the Holy Night", Developer: "Type-Moon", ReleaseDate: "April 12, 2012", Platform: "Windows"},
-	VisualNovel{Title: "Mahotsukai no Yoru: Dai-san-kan - A Sunny Day", Developer: "Type-Moon", ReleaseDate: "April 12, 2012", Platform: "Windows"},
-	VisualNovel{Title: "Mahotsukai no Yoru: Dai-yon-kan - The Blue Grimoire", Developer: "Type-Moon", ReleaseDate: "April 12, 2012", Platform: "Windows"},
-	VisualNovel{Title: "Mahotsukai no Yoru: Dai-go-kan - The Eve", Developer: "Type-Moon", ReleaseDate: "April 12, 2012", Platform: "Light novel"},
-	VisualNovel{Title: "Mahotsukai no Yoru: Dai-roku-kan - The First Evening", Developer: "Type-Moon", ReleaseDate: "April 12, 2012", Platform: "Windows"},
-	VisualNovel{Title: "Mahotsukai no Yoru: Dai-nana-kan - The Rainy Day", Developer: "Type-Moon", ReleaseDate: "April 12, 2012", Platform: "Light novel"},
-	VisualNovel{Title: "Mahotsukai no Yoru: Dai-hachi-kan - The Last Episode", Developer: "Type-Moon", ReleaseDate: "April 12, 2012", Platform: "Windows"},
-	VisualNovel{Title: "Mahotsukai no Yoru: Dai-kyū-kan - The Blue Grimoire", Developer: "Type-Moon", ReleaseDate: "April 12, 2012", Platform: "Windows"},
 }
 
 func GetAllVisualNovels() []VisualNovel {

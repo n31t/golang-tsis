@@ -14,10 +14,13 @@ func WelcomeHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func PrintAllVisualNovels(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "All Visual Novels:\n")
-	for _, v := range models.GetAllVisualNovels() {
-		fmt.Fprint(w, v.Title, "\n")
-	}
+	template := template.Must(template.ParseFiles("ui/html/allvn.html"))
+	template.ExecuteTemplate(w, "allvn.html", struct{ VisualNovels []models.VisualNovel }{models.GetAllVisualNovels()})
+
+	// fmt.Fprintf(w, "All Visual Novels:\n")
+	// for _, v := range models.GetAllVisualNovels() {
+	// 	fmt.Fprint(w, v.Title, "\n")
+	// }
 }
 
 func HealthCheck(w http.ResponseWriter, r *http.Request) {
@@ -31,8 +34,10 @@ func GetVisualNovelByTitle(w http.ResponseWriter, r *http.Request) {
 	title := vars["title"]
 	vn, err := models.GetVisualNovelByTitle(title)
 	if err != true {
-		w.WriteHeader(http.StatusNotFound)
-		fmt.Fprintf(w, "Visual Novel not found!\n")
+		// w.WriteHeader(http.StatusNotFound)
+		// fmt.Fprintf(w, "Visual Novel not found!\n")
+		template := template.Must(template.ParseFiles("ui/html/novn.html"))
+		template.ExecuteTemplate(w, "novn.html", vn)
 		return
 	}
 
