@@ -9,9 +9,9 @@ import (
 
 func main() {
 	r := mux.NewRouter()
-	r.HandleFunc("/vn", handlers.WelcomeHandler)
-	r.HandleFunc("/vn/health", handlers.HealthCheck)
-	r.HandleFunc("/vn/all", handlers.PrintAllVisualNovels)
-	r.HandleFunc("/vn/{title}", handlers.GetVisualNovelByTitle)
+	r.HandleFunc("/vn", handlers.WelcomeHandler).Methods("GET")
+	r.HandleFunc("/vn/health", handlers.HealthCheck).Methods("GET")
+	r.HandleFunc("/vn/all", handlers.PrintAllVisualNovels).Methods("GET")
+	r.HandleFunc("/vn/{title}", handlers.GetVisualNovelByTitle).Methods("GET")
 	http.ListenAndServe(":8080", r)
 }

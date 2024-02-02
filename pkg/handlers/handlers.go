@@ -1,6 +1,7 @@
 package handlers
 
 import (
+	"encoding/json"
 	"fmt"
 	"html/template"
 	"net/http"
@@ -14,13 +15,14 @@ func WelcomeHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func PrintAllVisualNovels(w http.ResponseWriter, r *http.Request) {
-	template := template.Must(template.ParseFiles("ui/html/allvn.html"))
-	template.ExecuteTemplate(w, "allvn.html", struct{ VisualNovels []models.VisualNovel }{models.GetAllVisualNovels()})
+	visualNovels := models.GetAllVisualNovels()
+	w.Header().Set("Content-Type", "application/json")
 
-	// fmt.Fprintf(w, "All Visual Novels:\n")
-	// for _, v := range models.GetAllVisualNovels() {
-	// 	fmt.Fprint(w, v.Title, "\n")
-	// }
+	err := json.NewEncoder(w).Encode(visualNovels)
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
 }
 
 func HealthCheck(w http.ResponseWriter, r *http.Request) {
@@ -34,8 +36,6 @@ func GetVisualNovelByTitle(w http.ResponseWriter, r *http.Request) {
 	title := vars["title"]
 	vn, err := models.GetVisualNovelByTitle(title)
 	if err != true {
-		// w.WriteHeader(http.StatusNotFound)
-		// fmt.Fprintf(w, "Visual Novel not found!\n")
 		template := template.Must(template.ParseFiles("ui/html/novn.html"))
 		template.ExecuteTemplate(w, "novn.html", vn)
 		return
@@ -43,6 +43,5 @@ func GetVisualNovelByTitle(w http.ResponseWriter, r *http.Request) {
 
 	template := template.Must(template.ParseFiles("ui/html/vn.html"))
 	template.ExecuteTemplate(w, "vn.html", vn)
-	// fmt.Fprintf(w, "Visual Novel Details:\nTitle: %s\nDeveloper: %s\nRelease Date: %s\nPlatform: %s\n",
-	// 	vn.Title, vn.Developer, vn.ReleaseDate, vn.Platform)
+	// We can actually do the same stuff as in PrintAllVisualNovels, but we are using a template here
 }
