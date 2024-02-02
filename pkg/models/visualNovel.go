@@ -52,7 +52,15 @@ func GetAllVisualNovels() []VisualNovel {
 }
 
 func GetVisualNovelByTitle(title string) (VisualNovel, bool) {
-	for _, novel := range visualNovels {
+	// for _, novel := range visualNovels {
+	// 	novelTitleWithoutSpaces := strings.ReplaceAll(novel.Title, " ", "")
+	// 	novelTitleWithoutSpaces = strings.ReplaceAll(novelTitleWithoutSpaces, "/", "")
+	// 	if novelTitleWithoutSpaces == title {
+	// 		return novel, true
+	// 	}
+	// }
+	for i := 0; i < len(visualNovels); i++ {
+		novel := visualNovels[i]
 		novelTitleWithoutSpaces := strings.ReplaceAll(novel.Title, " ", "")
 		novelTitleWithoutSpaces = strings.ReplaceAll(novelTitleWithoutSpaces, "/", "")
 		if novelTitleWithoutSpaces == title {
